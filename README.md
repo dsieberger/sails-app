@@ -11,11 +11,11 @@ a [Sails](http://sailsjs.org) application
 module.exports.connections = {
 
   databaseSystem: {
-    adapter: <node module>,
-    host: <machine IP address>,
-    user: <username>,
-    password: <password>,
-    database: <database name>
+    adapter: 'node module',
+    host: 'IP address',
+    user: 'username',
+    password: 'password',
+    database: 'database name'
   }
 
 };
