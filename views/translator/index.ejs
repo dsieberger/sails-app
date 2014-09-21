@@ -1,0 +1,49 @@
+<div class="container">
+	<h3>Translator Listing</h3>
+	<table class='table table-hover table-condensed'>
+	<tr>
+
+	<th> email_address </th>
+
+	<th> birth_date </th>
+
+	<th> first_name </th>
+
+	<th> last_name </th>
+
+	<th> country </th>
+
+	<th> gender </th>
+
+	<th></th>
+	<th></th>
+	<th></th>
+</tr>
+	<% _.forEach(translators, function(translator) { %>
+    		<tr data-id="<%=translator.id %>" data-model="translator">
+		
+			<td><%= translator.email_address%></td>
+		
+			<td><%= translator.birth_date%></td>
+		
+			<td><%= translator.first_name%></td>
+		
+			<td><%= translator.last_name%></td>
+		
+			<td><%= translator.country%></td>
+		
+			<td><%= translator.gender%></td>
+		
+			<td><a href="/translator/show/<%=translator.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+			<td><a href="/translator/edit/<%=translator.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+			<td><form action="/translator/destroy/<%=translator.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+			</form></td>
+		</tr>
+<% }) %>
+	</table>
+	<a href="/translator/new/" class="btn btn-success btn-sm" role="button">New Translator</a> |
+	<a href="/">all scaffolds</a>
+</div>
